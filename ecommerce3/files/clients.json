@@ -1,0 +1,9 @@
+[
+  {
+    "name": "JAN",
+    "surname": "KOWALSKI",
+    "age": 20,
+    "balance": "2500.00",
+    "preferences": [1, 2, 3]
+  }
+]
