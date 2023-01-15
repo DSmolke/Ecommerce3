@@ -1,10 +1,13 @@
 import json
-import re
+
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
+from enum import Enum
 from typing import Any, Callable, ClassVar
 
 from smolke_data.common.validator.string import matches_regex
+
+from ecommerce3.ecommerceapp.util.validator import Validator
 from ecommerce3.settings import Regex, FilenameException
 
 
@@ -35,3 +38,32 @@ class JsonReader(FileReader):
         """ Reads json file and returns it in same form how it was structured in source file"""
         with open(self.file_path, 'r') as f:
             return json.load(f)
+
+
+class Loader(ABC):
+    """ Abstraction of object loader """
+    @abstractmethod
+    def load(self) -> Any:
+        pass
+
+
+@dataclass(eq=False)
+class EnumLoader(Loader):
+    """
+    EnumLoader takes arguments:
+    - name of Enum that he will create,
+    - reader which will provide dict that will store enum object names and values,
+    - validator which will validate if dict provided by reader is correct for new enum purposes
+    """
+    name: str
+    reader: FileReader
+    validator: Validator.__class__
+
+    def load(self) -> Any:
+        """
+        Uses name, reader, and validator from instance namespace to create new Enum instance
+        :return: <'self.name' enum>
+        """
+        enum_data = self.reader.read()
+        self.validator(enum_data).validate()
+        return Enum(self.name, enum_data)
