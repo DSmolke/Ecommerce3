@@ -108,7 +108,19 @@ files = [
 [package.extras]
 cli = ["click (>=5.0)"]
 
+[[package]]
+name = "smolke-data"
+version = "0.1.0"
+description = ""
+category = "main"
+optional = false
+python-versions = ">=3.11,<4.0"
+files = [
+    {file = "smolke_data-0.1.0-py3-none-any.whl", hash = "sha256:42c33b2592bfccdb6ec00fda9b3f8119181a1e2c566bbf41c77a44763660128f"},
+    {file = "smolke_data-0.1.0.tar.gz", hash = "sha256:aa43bfee496a407731fd11891823abe97d3fea83696e36f5a6fd640ac7aa6c7a"},
+]
+
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "936a502d4ff72600cab58d4a0f30b99351070d695edadbc48ab981f68ee80073"
+content-hash = "ddc75dba72995c93c46c080baf4aaa0698523229af70cbf4f0a0b10d2541072e"

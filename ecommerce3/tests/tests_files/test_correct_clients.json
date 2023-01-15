@@ -1,0 +1,21 @@
+[
+  {
+    "name": "JAN",
+    "surname": "KOWALSKI",
+    "age": 20,
+    "balance": "2500.00",
+    "preferences": [1, 2, 3]
+  },
+      "name": "ANNA",
+    "surname": "LEWANDOWSKA",
+    "age": 21,
+    "balance": "3500.00",
+    "preferences": [3, 2, 1]
+  },
+      "name": "BOLESLAW",
+    "surname": "PRUS",
+    "age": 22,
+    "balance": "1500.00",
+    "preferences": [1, 3, 2]
+  },
+]
